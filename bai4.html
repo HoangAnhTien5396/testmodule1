@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <canvas id="canvas" width="900" ; height="500"></canvas>
+</head>
+
+<body>
+    <script>
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+
+        function Circle(x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = "#00000"
+
+            this.render = function createCircle() {
+                ctx.beginPath()
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+                ctx.fillStyle = this.color
+                ctx.fill()
+                ctx.closePath()
+            }
+        }
+        var circle = new Circle(10, 10, 100)
+        circle.render()
+    </script>
+</body>
+
+</html>
